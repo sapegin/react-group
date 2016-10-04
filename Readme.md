@@ -20,7 +20,7 @@ $ npm install --save react-group
 </Group>
 ```
 
-See [more examples](examples.md).
+See [more examples](https://sapegin.github.io/react-group/).
 
 ## Changelog
 

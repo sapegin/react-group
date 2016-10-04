@@ -4,4 +4,5 @@ module.exports = {
 	getExampleFilename: () => './examples.md',
 	getComponentPathLine: () => "import Group from 'react-group';",
 	showCode: true,
+	styleguideDir: './docs',
 };
