@@ -1,0 +1,50 @@
+{
+  "name": "react-group",
+  "description": "React component to render collection of items separated by space or other separator",
+  "version": "1.0.0",
+  "homepage": "https://github.com/sapegin/react-group",
+  "author": {
+    "name": "Artem Sapegin",
+    "url": "http://sapegin.me/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sapegin/react-group.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sapegin/react-group/issues"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js",
+  ],
+  "devDependencies": {
+    "enzyme": "~2.4.1",
+    "jest": "~16.0.0",
+    "react": "~15.3.2",
+    "react-addons-test-utils": "~15.3.2",
+    "react-dom": "~15.3.2",
+    "react-styleguidist": "~3.1.1",
+    "webpack": "~1.13.2"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=0.14.0",
+  },
+  "scripts": {
+    "start": "styleguidist server",
+    "styleguide-build": "styleguidist build",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "react",
+    "jsx",
+    "group",
+    "list",
+    "separator",
+    "collection",
+    "space"
+  ]
+}
