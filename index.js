@@ -11,13 +11,17 @@ function Group(props) {
 	;
 
 	// Skip falsy children
-	children = children.filter(child => !!child);
+	children = children.filter(function(child) {
+		return !!child;
+	});
 
 	// Insert separators
 	var items = children;
 	if (children.length > 1) {
 		items = [children.shift()];
-		children.forEach(item => items.push(props.separator, item));
+		children.forEach(function(item) {
+			return items.push(props.separator, item);
+		});
 	}
 
 	return React.createElement(props.inline ? 'span' : 'div', { className: props.className }, items);
