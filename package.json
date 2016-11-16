@@ -29,7 +29,7 @@
     "react-styleguidist": "~3.1.1",
     "semantic-release": "~4.3.5",
     "semantic-release-tamia": "~1.0.0",
-    "webpack": "~1.13.3"
+    "webpack": "1.13.2"
   },
   "dependencies": {},
   "peerDependencies": {
