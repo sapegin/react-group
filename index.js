@@ -33,8 +33,8 @@ Group.propTypes = {
 	/** Wrap in `<span>` instead of `<div>`. */
 	inline: React.PropTypes.bool,
 	/** Custom separator (space by default). */
-	separator: React.PropTypes.string,
-	/** Custo class name. */
+	separator: React.PropTypes.node,
+	/** Custom class name. */
 	className: React.PropTypes.string,
 };
 Group.defaultProps = {
