@@ -1,5 +1,6 @@
 # React Group
 
+[![npm](https://img.shields.io/npm/v/react-group.svg)](https://www.npmjs.com/package/react-group)
 [![Build Status](https://travis-ci.org/sapegin/react-group.svg)](https://travis-ci.org/sapegin/react-group)
 
 React component to render collection of items separated by space or other separator.
