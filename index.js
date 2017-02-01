@@ -17,10 +17,16 @@ function Group(props) {
 
 	// Insert separators
 	var items = children;
+	var separator = props.separator;
+	var separatorIsElement = React.isValidElement(separator);
 	if (children.length > 1) {
 		items = [children.shift()];
-		children.forEach(function(item) {
-			return items.push(props.separator, item);
+		children.forEach(function(item, index) {
+			if (separatorIsElement) {
+				var key = 'separator-' + (item.key || index);
+				separator = React.cloneElement(separator, { key: key });
+			}
+			return items.push(separator, item);
 		});
 	}
 
