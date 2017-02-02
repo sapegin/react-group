@@ -32,6 +32,16 @@ Comma-separated — array of strings:
 <Group separator=", " children={['One', 'Two', 'Three']} />
 ```
 
+React element-separated — React elements:
+
+```
+<Group separator={<br />}>
+	<a href="#">One</a>
+	<a href="#">Two</a>
+	<a href="#">Three</a>
+</Group>
+```
+
 Inline:
 
 ```

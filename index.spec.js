@@ -30,6 +30,19 @@ test('should render three button separated by a custom separator', () => {
 	expect(actual.text()).toEqual('One:Two:Three');
 });
 
+test('should render three button separated by react element <br/>', () => {
+	const originalErrorLog = console.error;
+	console.error = jest.genMockFn();
+
+	const actual = shallow(
+		createElement(Group, { separator: React.createElement('br') }, elements)
+	);
+
+	expect(console.error).not.toBeCalled();
+	expect(actual.find('br').length).toEqual(2);
+	console.error = originalErrorLog;
+});
+
 test('should render array of strings', () => {
 	const actual = shallow(
 		createElement(Group, {}, strings)
