@@ -23,9 +23,9 @@ $ npm install --save react-group
 
 See [more examples](https://sapegin.github.io/react-group/).
 
-## Changelog
+## Change log
 
-The changelog can be found on the [Releases page](https://github.com/sapegin/react-group/releases).
+The change log can be found on the [Releases page](https://github.com/sapegin/react-group/releases).
 
 ## Contributing
 
