@@ -32,7 +32,9 @@
     "semantic-release-tamia": "^1.1.0",
     "webpack": "1.14.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
   "peerDependencies": {
     "react": ">=0.14.0"
   },
