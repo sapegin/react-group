@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = require('prop-types');
 
 /**
  * React component to render collection of items separated by space or other separator.
@@ -35,13 +36,13 @@ function Group(props) {
 
 Group.propTypes = {
 	/** Items. */
-	children: React.PropTypes.node,
+	children: PropTypes.node,
 	/** Wrap in `<span>` instead of `<div>`. */
-	inline: React.PropTypes.bool,
+	inline: PropTypes.bool,
 	/** Custom separator (space by default). */
-	separator: React.PropTypes.node,
+	separator: PropTypes.node,
 	/** Custom class name. */
-	className: React.PropTypes.string,
+	className: PropTypes.string,
 };
 Group.defaultProps = {
 	separator: ' ',
