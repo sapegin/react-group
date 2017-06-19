@@ -1,10 +1,10 @@
-# Installation
+## Installation
 
 ```bash
 npm install --save react-group
 ```
 
-# Examples
+## Examples
 
 Space-separated (default):
 

@@ -1,15 +1,16 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 
+function castArray(value) {
+	return Array.isArray(value) ? value : [value];
+}
+
 /**
  * React component to render collection of items separated by space or other separator.
  */
 function Group(props) {
 	// Accept multiple children, one child or none
-	var children = props.children ?
-		(Array.isArray(props.children) ? props.children : [props.children])
-		: []
-	;
+	var children = props.children ? castArray(props.children) : [];
 
 	// Skip falsy children
 	children = children.filter(function(child) {
@@ -32,7 +33,7 @@ function Group(props) {
 	}
 
 	return React.createElement(props.inline ? 'span' : 'div', { className: props.className }, items);
-};
+}
 
 Group.propTypes = {
 	/** Items. */

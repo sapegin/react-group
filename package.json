@@ -21,30 +21,36 @@
   ],
   "devDependencies": {
     "enzyme": "^2.8.1",
+    "eslint": "^4.0.0",
+    "eslint-config-tamia": "^4.1.1",
+    "eslint-plugin-prettier": "^2.1.2",
     "gh-pages": "^0.12.0",
     "jest": "^19.0.2",
+    "prettier": "^1.4.4",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
-    "react-styleguidist": "^4.6.2",
+    "react-styleguidist": "^5.4.0",
     "react-test-renderer": "^15.5.4",
     "semantic-release": "^6.3.2",
     "semantic-release-tamia": "^1.1.1",
     "webpack": "2.3.3"
   },
   "dependencies": {
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.10"
   },
   "peerDependencies": {
     "react": ">=0.14.0"
   },
   "scripts": {
-    "start": "styleguidist server",
-    "styleguide-build": "styleguidist build",
+    "pretest": "npm run lint",
     "test": "jest",
     "test:watch": "jest --watch",
+    "lint": "eslint . --cache --fix",
+    "start": "styleguidist server",
+    "styleguide:build": "styleguidist build",
     "deploy": "gh-pages -d docs",
-    "gh-pages": "npm run styleguide-build && npm run deploy",
+    "gh-pages": "npm run styleguide:build && npm run deploy",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "release": {

@@ -1,6 +1,10 @@
+/* eslint-env es6 */
+
 const React = require('react');
 const shallow = require('enzyme').shallow;
 const Group = require('./index');
+
+/* eslint-disable no-console */
 
 const createElement = React.createElement;
 
@@ -12,9 +16,7 @@ const elements = [
 const strings = ['One', 'Two', 'Three'];
 
 test('should render three button separated by spaces', () => {
-	const actual = shallow(
-		createElement(Group, {}, elements)
-	);
+	const actual = shallow(createElement(Group, {}, elements));
 
 	expect(actual.node.type).toEqual('div');
 	expect(actual.find('button').length).toEqual(3);
@@ -22,9 +24,7 @@ test('should render three button separated by spaces', () => {
 });
 
 test('should render three button separated by a custom separator', () => {
-	const actual = shallow(
-		createElement(Group, { separator: ':' }, elements)
-	);
+	const actual = shallow(createElement(Group, { separator: ':' }, elements));
 
 	expect(actual.find('button').length).toEqual(3);
 	expect(actual.text()).toEqual('One:Two:Three');
@@ -34,9 +34,7 @@ test('should render three button separated by react element <br/>', () => {
 	const originalErrorLog = console.error;
 	console.error = jest.genMockFn();
 
-	const actual = shallow(
-		createElement(Group, { separator: React.createElement('br') }, elements)
-	);
+	const actual = shallow(createElement(Group, { separator: React.createElement('br') }, elements));
 
 	expect(console.error).not.toBeCalled();
 	expect(actual.find('br').length).toEqual(2);
@@ -44,33 +42,25 @@ test('should render three button separated by react element <br/>', () => {
 });
 
 test('should render array of strings', () => {
-	const actual = shallow(
-		createElement(Group, {}, strings)
-	);
+	const actual = shallow(createElement(Group, {}, strings));
 
 	expect(actual.text()).toEqual('One Two Three');
 });
 
 test('should wrap items in <span> when inline mode is enabled', () => {
-	const actual = shallow(
-		createElement(Group, { inline: true }, strings)
-	);
+	const actual = shallow(createElement(Group, { inline: true }, strings));
 
 	expect(actual.node.type).toEqual('span');
 });
 
 test('should work with a single child', () => {
-	const actual = shallow(
-		createElement(Group, {}, createElement('button', { key: 1 }, 'One'))
-	);
+	const actual = shallow(createElement(Group, {}, createElement('button', { key: 1 }, 'One')));
 
 	expect(actual.text()).toEqual('One');
 });
 
 test('should work without children', () => {
-	const actual = shallow(
-		createElement(Group, {})
-	);
+	const actual = shallow(createElement(Group, {}));
 
 	expect(actual.text()).toEqual('');
 });

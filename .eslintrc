@@ -1,0 +1,6 @@
+{
+  "extends": "tamia/legacy",
+  "rules": {
+    "valid-jsdoc": "off"
+  }
+}
