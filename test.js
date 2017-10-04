@@ -1,8 +1,12 @@
 /* eslint-env es6 */
 
 const React = require('react');
-const shallow = require('enzyme').shallow;
+const Enzyme = require('enzyme');
 const Group = require('./index');
+const Adapter = require('enzyme-adapter-react-16');
+const shallow = Enzyme.shallow;
+
+Enzyme.configure({ adapter: new Adapter() });
 
 /* eslint-disable no-console */
 
@@ -18,7 +22,7 @@ const strings = ['One', 'Two', 'Three'];
 test('should render three button separated by spaces', () => {
 	const actual = shallow(createElement(Group, {}, elements));
 
-	expect(actual.node.type).toEqual('div');
+	expect(actual.type()).toEqual('div');
 	expect(actual.find('button').length).toEqual(3);
 	expect(actual.text()).toEqual('One Two Three');
 });
@@ -50,7 +54,7 @@ test('should render array of strings', () => {
 test('should wrap items in <span> when inline mode is enabled', () => {
 	const actual = shallow(createElement(Group, { inline: true }, strings));
 
-	expect(actual.node.type).toEqual('span');
+	expect(actual.type()).toEqual('span');
 });
 
 test('should work with a single child', () => {
@@ -69,7 +73,7 @@ test('should skip falsy children', () => {
 	const actual = shallow(
 		createElement(Group, {}, [
 			createElement('button', { key: 1 }, 'One'),
-			false && createElement('button', { key: 2 }, 'Two'),
+			false,
 			createElement('button', { key: 3 }, 'Three'),
 		])
 	);
