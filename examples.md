@@ -8,7 +8,7 @@ npm install --save react-group
 
 Space-separated (default):
 
-```
+```jsx
 <Group>
 	<button>One</button>
 	<button>Two</button>
@@ -18,7 +18,7 @@ Space-separated (default):
 
 Comma-separated — React elements:
 
-```
+```jsx
 <Group separator=", ">
 	<a href="#">One</a>
 	<a href="#">Two</a>
@@ -28,13 +28,13 @@ Comma-separated — React elements:
 
 Comma-separated — array of strings:
 
-```
+```jsx
 <Group separator=", " children={['One', 'Two', 'Three']} />
 ```
 
 React element-separated — React elements:
 
-```
+```jsx
 <Group separator={<br />}>
 	<a href="#">One</a>
 	<a href="#">Two</a>
@@ -44,7 +44,7 @@ React element-separated — React elements:
 
 Inline:
 
-```
+```jsx
 <Group>
 	<Group separator=", " inline>
 		<a href="#">One</a>
