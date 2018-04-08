@@ -1,21 +1,11 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 
-function castArray(value) {
-	return Array.isArray(value) ? value : [value];
-}
-
 /**
  * React component to render collection of items separated by space or other separator.
  */
 function Group(props) {
-	// Accept multiple children, one child or none
-	var children = props.children ? castArray(props.children) : [];
-
-	// Skip falsy children
-	children = children.filter(function(child) {
-		return !!child;
-	});
+	var children = React.Children.toArray(props.children);
 
 	// Insert separators
 	var items = children;
