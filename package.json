@@ -19,6 +19,15 @@
   "files": [
     "index.js"
   ],
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2"
+  },
+  "peerDependencies": {
+    "react": ">=15.0.0"
+  },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -35,12 +44,6 @@
     "react-test-renderer": "^16.4.2",
     "semantic-release-tamia": "^1.1.1",
     "webpack": "4.16.4"
-  },
-  "dependencies": {
-    "prop-types": "^15.6.2"
-  },
-  "peerDependencies": {
-    "react": ">=15.0.0"
   },
   "scripts": {
     "pretest": "npm run lint",
