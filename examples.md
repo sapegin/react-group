@@ -54,3 +54,13 @@ Inline:
   <button>Add more</button>
 </Group>
 ```
+
+Custom element:
+
+```jsx
+<Group is="nav">
+  <a href="#">One</a>
+  <a href="#">Two</a>
+  <a href="#">Three</a>
+</Group>
+```

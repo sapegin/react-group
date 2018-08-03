@@ -59,6 +59,13 @@ test('should wrap items in <span> when inline mode is enabled', () => {
 	expect(actual.type()).toEqual('span');
 });
 
+test('should wrap items in an element defined by `is` prop', () => {
+	const is = 'article';
+	const actual = shallow(createElement(Group, { is }, strings));
+
+	expect(actual.type()).toEqual(is);
+});
+
 test('should work with a single child', () => {
 	const actual = shallow(
 		createElement(Group, {}, createElement('button', { key: 1 }, 'One'))
