@@ -6,6 +6,11 @@ module.exports = {
 	components: './index.js',
 	getExampleFilename: () => path.join(__dirname, '/examples.md'),
 	getComponentPathLine: () => "import Group from 'react-group';",
-	showCode: true,
+	ribbon: {
+		url: 'https://github.com/sapegin/react-group',
+	},
+	exampleMode: 'expand',
+	usageMode: 'expand',
+	showSidebar: false,
 	styleguideDir: './docs',
 };
