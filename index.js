@@ -22,7 +22,11 @@ function Group(props) {
 		});
 	}
 
-	return React.createElement(props.inline ? 'span' : 'div', { className: props.className }, items);
+	return React.createElement(
+		props.inline ? 'span' : 'div',
+		{ className: props.className },
+		items
+	);
 }
 
 Group.propTypes = {

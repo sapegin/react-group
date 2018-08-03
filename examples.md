@@ -10,9 +10,9 @@ Space-separated (default):
 
 ```jsx
 <Group>
-	<button>One</button>
-	<button>Two</button>
-	<button>Three</button>
+  <button>One</button>
+  <button>Two</button>
+  <button>Three</button>
 </Group>
 ```
 
@@ -20,9 +20,9 @@ Comma-separated — React elements:
 
 ```jsx
 <Group separator=", ">
-	<a href="#">One</a>
-	<a href="#">Two</a>
-	<a href="#">Three</a>
+  <a href="#">One</a>
+  <a href="#">Two</a>
+  <a href="#">Three</a>
 </Group>
 ```
 
@@ -36,9 +36,9 @@ React element-separated — React elements:
 
 ```jsx
 <Group separator={<br />}>
-	<a href="#">One</a>
-	<a href="#">Two</a>
-	<a href="#">Three</a>
+  <a href="#">One</a>
+  <a href="#">Two</a>
+  <a href="#">Three</a>
 </Group>
 ```
 
@@ -46,11 +46,11 @@ Inline:
 
 ```jsx
 <Group>
-	<Group separator=", " inline>
-		<a href="#">One</a>
-		<a href="#">Two</a>
-		<a href="#">Three</a>
-	</Group>
-	<button>Add more</button>
+  <Group separator=", " inline>
+    <a href="#">One</a>
+    <a href="#">Two</a>
+    <a href="#">Three</a>
+  </Group>
+  <button>Add more</button>
 </Group>
 ```

@@ -2,7 +2,6 @@
 
 I love pull requests. And following this simple guidelines will make your pull request easier to merge.
 
-
 ## Submitting pull requests
 
 1. Create a new branch, please don’t work in master directly.
@@ -11,7 +10,6 @@ I love pull requests. And following this simple guidelines will make your pull r
 4. Run tests to see if the tests pass. Repeat steps 2–4 until done.
 5. Update the documentation to reflect any changes.
 6. Push to your fork and submit a pull request.
-
 
 ## JavaScript code style
 
@@ -31,22 +29,21 @@ Example:
 
 ```js
 function foo(bar, fum) {
-    if (!bar) {
-    	return;
-    }
+  if (!bar) {
+    return;
+  }
 
-    var hello = 'Hello';
-    var ret = 0;
-    for (let barIdx = 0; barIdx < bar.length; barIdx++) {
-        if (bar[barIdx] === hello) {
-            ret += fum(bar[barIdx]);
-        }
+  var hello = 'Hello';
+  var ret = 0;
+  for (let barIdx = 0; barIdx < bar.length; barIdx++) {
+    if (bar[barIdx] === hello) {
+      ret += fum(bar[barIdx]);
     }
+  }
 
-    return ret;
+  return ret;
 }
 ```
-
 
 ## Other notes
 
@@ -55,7 +52,6 @@ function foo(bar, fum) {
 - Don’t change version number and change log.
 - Install [EditorConfig](http://editorconfig.org/) plugin for your code editor.
 - Feel free to [ask me](http://sapegin.me) anything you need.
-
 
 ## Building and running tests
 

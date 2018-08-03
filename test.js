@@ -36,9 +36,11 @@ test('should render three button separated by a custom separator', () => {
 
 test('should render three button separated by react element <br/>', () => {
 	const originalErrorLog = console.error;
-	console.error = jest.genMockFn();
+	console.error = jest.fn();
 
-	const actual = shallow(createElement(Group, { separator: React.createElement('br') }, elements));
+	const actual = shallow(
+		createElement(Group, { separator: React.createElement('br') }, elements)
+	);
 
 	expect(console.error).not.toBeCalled();
 	expect(actual.find('br').length).toEqual(2);
@@ -58,7 +60,9 @@ test('should wrap items in <span> when inline mode is enabled', () => {
 });
 
 test('should work with a single child', () => {
-	const actual = shallow(createElement(Group, {}, createElement('button', { key: 1 }, 'One')));
+	const actual = shallow(
+		createElement(Group, {}, createElement('button', { key: 1 }, 'One'))
+	);
 
 	expect(actual.text()).toEqual('One');
 });

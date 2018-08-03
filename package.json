@@ -22,22 +22,22 @@
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.8.0",
-    "eslint-config-tamia": "^4.2.3",
-    "eslint-plugin-prettier": "^2.3.1",
+    "eslint": "^5.2.0",
+    "eslint-config-tamia": "^6.0.1",
     "gh-pages": "^1.2.0",
-    "jest": "^21.2.1",
-    "prettier": "^1.7.4",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-styleguidist": "^6.0.27",
-    "react-test-renderer": "^16.0.0",
-    "semantic-release": "^6.3.2",
+    "husky": "^0.14.3",
+    "jest": "^23.4.2",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.14.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-styleguidist": "^7.1.3",
+    "react-test-renderer": "^16.4.2",
     "semantic-release-tamia": "^1.1.1",
-    "webpack": "3.6.0"
+    "webpack": "4.16.4"
   },
   "dependencies": {
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.6.2"
   },
   "peerDependencies": {
     "react": ">=15.0.0"
@@ -45,18 +45,15 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "jest",
+    "posttest": "npm run format",
     "test:watch": "jest --watch",
     "lint": "eslint . --cache --fix",
     "start": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "deploy": "gh-pages -d docs",
     "gh-pages": "npm run styleguide:build && npm run deploy",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
-  },
-  "release": {
-    "analyzeCommits": "semantic-release-tamia/analyzeCommits",
-    "generateNotes": "semantic-release-tamia/generateNotes",
-    "verifyRelease": "semantic-release-tamia/verifyRelease"
+    "format": "prettier --write '**/*.{js,md}'",
+    "precommit": "lint-staged"
   },
   "keywords": [
     "react",
@@ -66,5 +63,18 @@
     "separator",
     "collection",
     "space"
-  ]
+  ],
+  "jest": {
+    "testURL": "http://localhost/"
+  },
+  "lint-staged": {
+    "*.{js,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }
