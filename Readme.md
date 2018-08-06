@@ -2,17 +2,17 @@
 
 [![npm](https://img.shields.io/npm/v/react-group.svg)](https://www.npmjs.com/package/react-group) [![Build Status](https://travis-ci.org/sapegin/react-group.svg)](https://travis-ci.org/sapegin/react-group)
 
-React component to render collection of items separated by space or other separator.
+React component to render a collection of items separated by space or other separator.
 
 ## Installation
 
 ```bash
-$ npm install --save react-group
+npm install --save react-group
 ```
 
 ## Examples
 
-```html
+```jsx
 <Group>
   <button>One</button>
   <button>Two</button>
@@ -20,7 +20,7 @@ $ npm install --save react-group
 </Group>
 ```
 
-See [more examples](https://sapegin.github.io/react-group/).
+Will render three space-separated buttons. See [more examples](https://sapegin.github.io/react-group/).
 
 ## Change log
 
