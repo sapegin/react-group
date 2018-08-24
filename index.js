@@ -10,6 +10,8 @@ function getElement(props) {
 
 /**
  * React component to render collection of items separated by space or other separator.
+ *
+ * @visibleName React Group
  */
 function Group(props) {
 	var children = React.Children.toArray(props.children);
