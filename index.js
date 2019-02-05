@@ -1,13 +1,6 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 
-function getElement(props) {
-	if (props.is) {
-		return props.is;
-	}
-	return props.inline ? 'span' : 'div';
-}
-
 /**
  * React component to render collection of items separated by space or other separator.
  *
@@ -34,24 +27,14 @@ function Group(props) {
 		});
 	}
 
-	return React.createElement(
-		getElement(props),
-		{ className: props.className },
-		items
-	);
+	return items;
 }
 
 Group.propTypes = {
 	/** Items */
 	children: PropTypes.node,
-	/** Wrap in `<span>` instead of `<div>` */
-	inline: PropTypes.bool,
 	/** Custom separator (space by default) */
 	separator: PropTypes.node,
-	/** Custom element (overrides `inline` prop) */
-	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	/** Custom class name */
-	className: PropTypes.string,
 };
 Group.defaultProps = {
 	separator: ' ',

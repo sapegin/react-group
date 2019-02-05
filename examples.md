@@ -46,12 +46,12 @@ import Group from 'react-group';
 </Group>;
 ```
 
-Inline:
+Nested:
 
 ```jsx
 import Group from 'react-group';
 <Group>
-  <Group separator=", " inline>
+  <Group separator=", ">
     <a href="#">One</a>
     <a href="#">Two</a>
     <a href="#">Three</a>
