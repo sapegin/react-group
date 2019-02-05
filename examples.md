@@ -1,3 +1,5 @@
+React component to render a collection of items separated by space or other separator.
+
 ## Installation
 
 ```bash
