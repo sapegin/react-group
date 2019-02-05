@@ -7,25 +7,22 @@ var PropTypes = require('prop-types');
  * @visibleName React Group
  */
 function Group(props) {
-	var children = React.Children.toArray(props.children);
+	var children = React.Children.toArray(props.children).filter(Boolean);
+	if (children.length === 1) {
+		return children;
+	}
 
 	// Insert separators
-	var items = children;
 	var separator = props.separator;
 	var separatorIsElement = React.isValidElement(separator);
-	if (children.length > 1) {
-		items = [children.shift()];
-		children.forEach(function(item, index) {
-			if (!item) {
-				return;
-			}
-			if (separatorIsElement) {
-				var key = 'separator-' + (item.key || index);
-				separator = React.cloneElement(separator, { key: key });
-			}
-			items.push(separator, item);
-		});
-	}
+	var items = [children.shift()];
+	children.forEach(function(item, index) {
+		if (separatorIsElement) {
+			var key = 'separator-' + (item.key || index);
+			separator = React.cloneElement(separator, { key: key });
+		}
+		items.push(separator, item);
+	});
 
 	return items;
 }

@@ -71,11 +71,17 @@ test('should work without children', () => {
 
 test('should skip falsy children', () => {
 	const actual = render({ separator: ':' }, [
+		false,
+		null,
+		'',
 		createElement('button', { key: 1 }, 'One'),
 		false,
 		null,
 		'',
 		createElement('button', { key: 3 }, 'Three'),
+		false,
+		null,
+		'',
 	]);
 
 	expect(actual.find('button').length).toEqual(2);
