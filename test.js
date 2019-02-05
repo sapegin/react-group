@@ -82,13 +82,15 @@ test('should work without children', () => {
 
 test('should skip falsy children', () => {
 	const actual = shallow(
-		createElement(Group, {}, [
+		createElement(Group, { separator: ':' }, [
 			createElement('button', { key: 1 }, 'One'),
 			false,
+			null,
+			'',
 			createElement('button', { key: 3 }, 'Three'),
 		])
 	);
 
 	expect(actual.find('button').length).toEqual(2);
-	expect(actual.text()).toEqual('One Three');
+	expect(actual.text()).toEqual('One:Three');
 });

@@ -23,11 +23,14 @@ function Group(props) {
 	if (children.length > 1) {
 		items = [children.shift()];
 		children.forEach(function(item, index) {
+			if (!item) {
+				return;
+			}
 			if (separatorIsElement) {
 				var key = 'separator-' + (item.key || index);
 				separator = React.cloneElement(separator, { key: key });
 			}
-			return items.push(separator, item);
+			items.push(separator, item);
 		});
 	}
 
