@@ -9,42 +9,47 @@ npm install --save react-group
 Space-separated (default):
 
 ```jsx
+import Group from 'react-group';
 <Group>
   <button>One</button>
   <button>Two</button>
   <button>Three</button>
-</Group>
+</Group>;
 ```
 
 Comma-separated — React elements:
 
 ```jsx
+import Group from 'react-group';
 <Group separator=", ">
   <a href="#">One</a>
   <a href="#">Two</a>
   <a href="#">Three</a>
-</Group>
+</Group>;
 ```
 
 Comma-separated — array of strings:
 
 ```jsx
-<Group separator=", " children={['One', 'Two', 'Three']} />
+import Group from 'react-group';
+<Group separator=", " children={['One', 'Two', 'Three']} />;
 ```
 
 React element-separated — React elements:
 
 ```jsx
+import Group from 'react-group';
 <Group separator={<br />}>
   <a href="#">One</a>
   <a href="#">Two</a>
   <a href="#">Three</a>
-</Group>
+</Group>;
 ```
 
 Inline:
 
 ```jsx
+import Group from 'react-group';
 <Group>
   <Group separator=", " inline>
     <a href="#">One</a>
@@ -52,15 +57,16 @@ Inline:
     <a href="#">Three</a>
   </Group>
   <button>Add more</button>
-</Group>
+</Group>;
 ```
 
 Custom element:
 
 ```jsx
+import Group from 'react-group';
 <Group is="nav">
   <a href="#">One</a>
   <a href="#">Two</a>
   <a href="#">Three</a>
-</Group>
+</Group>;
 ```

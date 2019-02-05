@@ -40,7 +40,7 @@
     "prettier": "^1.14.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-styleguidist": "^7.2.5",
+    "react-styleguidist": "9.0.0-beta4",
     "react-test-renderer": "^16.4.2",
     "webpack": "4.17.1"
   },
