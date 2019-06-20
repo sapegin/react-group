@@ -61,14 +61,3 @@ import Group from 'react-group';
   <button>Add more</button>
 </Group>;
 ```
-
-Custom element:
-
-```jsx
-import Group from 'react-group';
-<Group is="nav">
-  <a href="#">One</a>
-  <a href="#">Two</a>
-  <a href="#">Three</a>
-</Group>;
-```
