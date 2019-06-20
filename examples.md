@@ -22,7 +22,7 @@ import Props from 'react-styleguidist/lib/client/rsg-components/Props';
       name: 'children',
       type: { name: 'Node' },
       description: 'Items'
-    },
+    }
   ]}
 />;
 ```
