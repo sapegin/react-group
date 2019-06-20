@@ -1,11 +1,11 @@
-/* eslint-env es6 */
-
-const path = require('path');
 module.exports = {
 	title: 'React Group',
-	components: './index.js',
-	getExampleFilename: () => path.join(__dirname, '/examples.md'),
-	getComponentPathLine: () => null,
+	sections: [
+		{
+			name: 'React Group',
+			content: 'examples.md',
+		},
+	],
 	moduleAliases: {
 		'react-group': __dirname,
 	},
