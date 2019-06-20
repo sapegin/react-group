@@ -6,6 +6,27 @@ React component to render a collection of items separated by space or other sepa
 npm install --save react-group
 ```
 
+## Props
+
+```jsx noeditor
+import Props from 'react-styleguidist/lib/client/rsg-components/Props';
+<Props
+  props={[
+    {
+      name: 'separator',
+      type: { name: 'Node' },
+      defaultValue: { value: ' ' },
+      description: 'Custom separator: a string or JSX'
+    },
+    {
+      name: 'children',
+      type: { name: 'Node' },
+      description: 'Items'
+    },
+  ]}
+/>;
+```
+
 ## Examples
 
 Space-separated (default):
