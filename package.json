@@ -42,7 +42,7 @@
     "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-styleguidist": "9.1.8",
+    "react-styleguidist": "13.0.0",
     "react-test-renderer": "^16.8.6",
     "webpack": "4.35.0"
   },
