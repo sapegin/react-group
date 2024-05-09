@@ -1,11 +1,11 @@
 {
 	"name": "react-group",
-	"description": "React component to render collection of items separated by space or other separator",
+	"description": "React component to render collection of items separated by space or another separator",
 	"version": "0.0.0-development",
 	"homepage": "https://github.com/sapegin/react-group",
 	"author": {
 		"name": "Artem Sapegin",
-		"url": "http://sapegin.me/"
+		"url": "https://sapegin.me/"
 	},
 	"repository": {
 		"type": "git",
@@ -22,7 +22,7 @@
 		"index.d.ts"
 	],
 	"engines": {
-		"node": ">=6"
+		"node": ">=20"
 	},
 	"dependencies": {
 		"prop-types": "^15.8.1"
@@ -70,7 +70,7 @@
 		"testEnvironment": "jest-environment-jsdom"
 	},
 	"lint-staged": {
-		"*.{js,md}": [
+		"*.{js,ts,md}": [
 			"prettier --write",
 			"git add"
 		],
