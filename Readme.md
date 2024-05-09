@@ -1,6 +1,6 @@
 # React Group
 
-[![npm](https://img.shields.io/npm/v/react-group.svg)](https://www.npmjs.com/package/react-group) [![Build Status](https://travis-ci.org/sapegin/react-group.svg)](https://travis-ci.org/sapegin/react-group)
+[![npm](https://img.shields.io/npm/v/react-group.svg)](https://www.npmjs.com/package/react-group) [![Node.js CI status](https://github.com/sapegin/react-group/workflows/Node.js%20CI/badge.svg)](https://github.com/sapegin/react-group/actions)
 
 React component to render a collection of items separated by space or other separator.
 
@@ -38,6 +38,6 @@ This software has been developed with lots of coffee, buy me one more cup to kee
 
 ## Author and license
 
-[Artem Sapegin](http://sapegin.me).
+[Artem Sapegin](https://sapegin.me).
 
 MIT License, see the included [License.md](License.md) file.
