@@ -16,7 +16,7 @@ function Group(props) {
 	var separator = props.separator === undefined ? ' ' : props.separator;
 	var separatorIsElement = React.isValidElement(separator);
 	var items = [children.shift()];
-	children.forEach(function(item, index) {
+	children.forEach(function (item, index) {
 		if (separatorIsElement) {
 			var key = 'separator-' + (item.key || index);
 			separator = React.cloneElement(separator, { key: key });

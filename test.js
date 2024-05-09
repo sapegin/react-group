@@ -1,19 +1,15 @@
-/* eslint-env es6 */
+/* eslint-env es2020 */
 
 const React = require('react');
-const Enzyme = require('enzyme');
+const { render, screen } = require('@testing-library/react');
 const Group = require('./index');
-const Adapter = require('enzyme-adapter-react-16');
-const shallow = Enzyme.mount;
-
-Enzyme.configure({ adapter: new Adapter() });
 
 /* eslint-disable no-console */
 
 const createElement = React.createElement;
 
-const render = (props, children) =>
-	Enzyme.mount(createElement('div', {}, createElement(Group, props, children)));
+const renderTest = (props, children) =>
+	render(createElement('div', {}, createElement(Group, props, children)));
 
 const elements = [
 	createElement('button', { key: 1 }, 'One'),
@@ -22,68 +18,65 @@ const elements = [
 ];
 const strings = ['One', 'Two', 'Three'];
 
-test('should render three button separated by spaces', () => {
-	const actual = render({}, elements);
+test('should render three button separated by spaces', async () => {
+	const { container } = renderTest({}, elements);
 
-	expect(actual.find('button').length).toEqual(3);
-	expect(actual.text()).toEqual('One Two Three');
+	expect(await screen.findAllByRole('button')).toHaveLength(3);
+	expect(container.textContent).toEqual('One Two Three');
 });
 
-test('should render three button separated by a custom separator', () => {
-	const actual = render({ separator: ':' }, elements);
+test('should render three button separated by a custom separator', async () => {
+	const { container } = renderTest({ separator: ':' }, elements);
 
-	expect(actual.find('button').length).toEqual(3);
-	expect(actual.text()).toEqual('One:Two:Three');
+	expect(await screen.findAllByRole('button')).toHaveLength(3);
+	expect(container.textContent).toEqual('One:Two:Three');
 });
 
-test('should render three button separated by react element <br/>', () => {
+test('should render three button separated by react element <br/>', async () => {
 	const originalErrorLog = console.error;
 	console.error = jest.fn();
 
-	const actual = shallow(
-		createElement(Group, { separator: React.createElement('br') }, elements)
-	);
+	renderTest({ separator: React.createElement('hr') }, elements);
 
+	expect(await screen.findAllByRole('separator')).toHaveLength(2);
 	expect(console.error).not.toBeCalled();
-	expect(actual.find('br').length).toEqual(2);
+
 	console.error = originalErrorLog;
 });
 
 test('should render array of strings', () => {
-	const actual = render({}, strings);
+	const { container } = renderTest({}, strings);
 
-	expect(actual.text()).toEqual('One Two Three');
+	expect(container.textContent).toEqual('One Two Three');
 });
 
 test('should work with a single child', () => {
-	const actual = shallow(
-		createElement(Group, {}, createElement('button', { key: 1 }, 'One'))
-	);
+	const { container } = renderTest({}, elements[0]);
 
-	expect(actual.text()).toEqual('One');
+	expect(container.textContent).toEqual('One');
 });
 
 test('should work without children', () => {
-	const actual = render({});
+	const { container } = renderTest({});
 
-	expect(actual.text()).toEqual('');
+	expect(container.textContent).toEqual('');
 });
 
-test('should skip falsy children', () => {
-	const actual = render({ separator: ':' }, [
+test('should skip falsy children', async () => {
+	const { container } = renderTest({ separator: ':' }, [
 		false,
 		null,
 		'',
-		createElement('button', { key: 1 }, 'One'),
+		elements[0],
 		false,
 		null,
 		'',
-		createElement('button', { key: 3 }, 'Three'),
+		elements[2],
 		false,
 		null,
 		'',
 	]);
 
-	expect(actual.find('button').length).toEqual(2);
-	expect(actual.text()).toEqual('One:Three');
+	expect(await screen.findAllByRole('button')).toHaveLength(2);
+	expect(container.textContent).toEqual('One:Three');
 });
