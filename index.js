@@ -13,7 +13,7 @@ function Group(props) {
 	}
 
 	// Insert separators
-	var separator = props.separator;
+	var separator = props.separator === undefined ? ' ' : props.separator;
 	var separatorIsElement = React.isValidElement(separator);
 	var items = [children.shift()];
 	children.forEach(function(item, index) {
@@ -32,9 +32,6 @@ Group.propTypes = {
 	children: PropTypes.node,
 	/** Custom separator (space by default) */
 	separator: PropTypes.node,
-};
-Group.defaultProps = {
-	separator: ' ',
 };
 
 module.exports = Group;
