@@ -4,6 +4,8 @@
 
 React component to render a collection of items separated by space or other separator.
 
+[![Washing your code. A book on clean code for frontend developers](https://sapegin.me/images/washing-code-github.jpg)](https://sapegin.me/book/)
+
 ## Installation
 
 ```bash
